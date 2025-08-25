@@ -98,10 +98,15 @@ export function ArtisanLayout({ children }: ArtisanLayoutProps) {
         </SidebarContent>
 
         <SidebarFooter className="border-t border-sidebar-border">
-          <div className="p-4 text-center">
-            <p className="text-xs text-sidebar-foreground/50">
-              Made with ❤️ for artisans
-            </p>
+          <div className="p-4 space-y-3">
+            <div className="flex items-center justify-center">
+              <ThemeToggle variant="ghost" size="sm" showLabel={false} />
+            </div>
+            <div className="text-center">
+              <p className="text-xs text-sidebar-foreground/50">
+                Made with ❤️ for artisans
+              </p>
+            </div>
           </div>
         </SidebarFooter>
       </Sidebar>
