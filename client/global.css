@@ -9,49 +9,49 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    /* Warm earthy dark theme for Artisan Muse */
-    --background: 20 15% 8%;
-    --foreground: 35 20% 92%;
+    /* Warm earthy light theme for Artisan Muse */
+    --background: 35 25% 98%;
+    --foreground: 20 20% 12%;
 
-    --card: 20 12% 12%;
-    --card-foreground: 35 20% 92%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 20% 12%;
 
-    --popover: 20 12% 12%;
-    --popover-foreground: 35 20% 92%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 20% 12%;
 
-    --primary: 18 85% 58%;
-    --primary-foreground: 20 15% 8%;
+    --primary: 18 85% 55%;
+    --primary-foreground: 35 25% 98%;
 
-    --secondary: 25 35% 25%;
-    --secondary-foreground: 35 20% 92%;
+    --secondary: 35 15% 92%;
+    --secondary-foreground: 20 20% 12%;
 
-    --muted: 20 8% 18%;
-    --muted-foreground: 35 10% 65%;
+    --muted: 35 10% 95%;
+    --muted-foreground: 20 15% 45%;
 
-    --accent: 42 88% 65%;
-    --accent-foreground: 20 15% 8%;
+    --accent: 42 88% 58%;
+    --accent-foreground: 20 20% 12%;
 
-    --destructive: 0 65% 55%;
-    --destructive-foreground: 35 20% 92%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 35 25% 98%;
 
-    --border: 20 8% 18%;
-    --input: 20 8% 18%;
-    --ring: 18 85% 58%;
+    --border: 35 15% 88%;
+    --input: 35 15% 88%;
+    --ring: 18 85% 55%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 20 12% 10%;
-    --sidebar-foreground: 35 15% 85%;
-    --sidebar-primary: 18 85% 58%;
-    --sidebar-primary-foreground: 20 15% 8%;
-    --sidebar-accent: 20 8% 18%;
-    --sidebar-accent-foreground: 35 15% 85%;
-    --sidebar-border: 20 8% 15%;
-    --sidebar-ring: 42 88% 65%;
+    --sidebar-background: 35 20% 96%;
+    --sidebar-foreground: 20 20% 12%;
+    --sidebar-primary: 18 85% 55%;
+    --sidebar-primary-foreground: 35 25% 98%;
+    --sidebar-accent: 35 15% 92%;
+    --sidebar-accent-foreground: 20 20% 12%;
+    --sidebar-border: 35 12% 85%;
+    --sidebar-ring: 42 88% 58%;
   }
 
   .dark {
-    /* Enhanced dark mode for deeper contrast */
+    /* Optional dark mode - keep original dark colors */
     --background: 20 20% 5%;
     --foreground: 35 25% 95%;
 
@@ -99,7 +99,5 @@
     @apply bg-background text-foreground;
   }
 
-  html {
-    @apply dark;
-  }
+  /* Remove dark class - now using light theme by default */
 }
