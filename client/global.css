@@ -9,6 +9,48 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
+    /* Warm earthy dark theme for Artisan Muse - Default */
+    --background: 20 15% 8%;
+    --foreground: 35 20% 92%;
+
+    --card: 20 12% 12%;
+    --card-foreground: 35 20% 92%;
+
+    --popover: 20 12% 12%;
+    --popover-foreground: 35 20% 92%;
+
+    --primary: 18 85% 58%;
+    --primary-foreground: 20 15% 8%;
+
+    --secondary: 25 35% 25%;
+    --secondary-foreground: 35 20% 92%;
+
+    --muted: 20 8% 18%;
+    --muted-foreground: 35 10% 65%;
+
+    --accent: 42 88% 65%;
+    --accent-foreground: 20 15% 8%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 35 20% 92%;
+
+    --border: 20 8% 18%;
+    --input: 20 8% 18%;
+    --ring: 18 85% 58%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 20 12% 10%;
+    --sidebar-foreground: 35 15% 85%;
+    --sidebar-primary: 18 85% 58%;
+    --sidebar-primary-foreground: 20 15% 8%;
+    --sidebar-accent: 20 8% 18%;
+    --sidebar-accent-foreground: 35 15% 85%;
+    --sidebar-border: 20 8% 15%;
+    --sidebar-ring: 42 88% 65%;
+  }
+
+  .light {
     /* Warm earthy light theme for Artisan Muse */
     --background: 35 25% 98%;
     --foreground: 20 20% 12%;
@@ -38,8 +80,6 @@
     --input: 35 15% 88%;
     --ring: 18 85% 55%;
 
-    --radius: 0.75rem;
-
     --sidebar-background: 35 20% 96%;
     --sidebar-foreground: 20 20% 12%;
     --sidebar-primary: 18 85% 55%;
@@ -48,45 +88,6 @@
     --sidebar-accent-foreground: 20 20% 12%;
     --sidebar-border: 35 12% 85%;
     --sidebar-ring: 42 88% 58%;
-  }
-
-  .dark {
-    /* Optional dark mode - keep original dark colors */
-    --background: 20 20% 5%;
-    --foreground: 35 25% 95%;
-
-    --card: 20 15% 8%;
-    --card-foreground: 35 25% 95%;
-
-    --popover: 20 15% 8%;
-    --popover-foreground: 35 25% 95%;
-
-    --primary: 18 90% 62%;
-    --primary-foreground: 20 20% 5%;
-
-    --secondary: 25 40% 20%;
-    --secondary-foreground: 35 25% 95%;
-
-    --muted: 20 10% 15%;
-    --muted-foreground: 35 15% 70%;
-
-    --accent: 42 92% 68%;
-    --accent-foreground: 20 20% 5%;
-
-    --destructive: 0 70% 58%;
-    --destructive-foreground: 35 25% 95%;
-
-    --border: 20 10% 15%;
-    --input: 20 10% 15%;
-    --ring: 18 90% 62%;
-    --sidebar-background: 20 18% 7%;
-    --sidebar-foreground: 35 20% 88%;
-    --sidebar-primary: 18 90% 62%;
-    --sidebar-primary-foreground: 20 20% 5%;
-    --sidebar-accent: 20 10% 15%;
-    --sidebar-accent-foreground: 35 20% 88%;
-    --sidebar-border: 20 10% 12%;
-    --sidebar-ring: 42 92% 68%;
   }
 }
 
@@ -99,5 +100,8 @@
     @apply bg-background text-foreground;
   }
 
-  /* Remove dark class - now using light theme by default */
+  /* Default to dark theme */
+  html {
+    @apply dark;
+  }
 }
