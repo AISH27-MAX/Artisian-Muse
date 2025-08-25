@@ -19,6 +19,7 @@ import {
   SidebarProvider,
   SidebarInset,
 } from "@/components/ui/sidebar";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface ArtisanLayoutProps {
   children: ReactNode;
