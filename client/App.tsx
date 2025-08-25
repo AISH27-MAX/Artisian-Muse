@@ -34,65 +34,67 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={
-            <PublicLayout>
-              <Homepage />
-            </PublicLayout>
-          } />
-          <Route path="/marketplace" element={
-            <PublicLayout>
-              <Marketplace />
-            </PublicLayout>
-          } />
-          <Route path="/product/:id" element={
-            <PublicLayout>
-              <ProductDetail />
-            </PublicLayout>
-          } />
-          <Route path="/artisan/:id" element={
-            <PublicLayout>
-              <ArtisanProfile />
-            </PublicLayout>
-          } />
+    <ThemeProvider defaultTheme="dark" storageKey="artisan-muse-theme">
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/" element={
+              <PublicLayout>
+                <Homepage />
+              </PublicLayout>
+            } />
+            <Route path="/marketplace" element={
+              <PublicLayout>
+                <Marketplace />
+              </PublicLayout>
+            } />
+            <Route path="/product/:id" element={
+              <PublicLayout>
+                <ProductDetail />
+              </PublicLayout>
+            } />
+            <Route path="/artisan/:id" element={
+              <PublicLayout>
+                <ArtisanProfile />
+              </PublicLayout>
+            } />
 
-          {/* Artisan Dashboard Routes */}
-          <Route path="/dashboard" element={
-            <ArtisanLayout>
-              <Dashboard />
-            </ArtisanLayout>
-          } />
-          <Route path="/storyteller" element={
-            <ArtisanLayout>
-              <StorytellerStudio />
-            </ArtisanLayout>
-          } />
-          <Route path="/marketing" element={
-            <ArtisanLayout>
-              <MarketingAssistant />
-            </ArtisanLayout>
-          } />
-          <Route path="/insights" element={
-            <ArtisanLayout>
-              <AudienceInsights />
-            </ArtisanLayout>
-          } />
-          <Route path="/profile" element={
-            <ArtisanLayout>
-              <Profile />
-            </ArtisanLayout>
-          } />
+            {/* Artisan Dashboard Routes */}
+            <Route path="/dashboard" element={
+              <ArtisanLayout>
+                <Dashboard />
+              </ArtisanLayout>
+            } />
+            <Route path="/storyteller" element={
+              <ArtisanLayout>
+                <StorytellerStudio />
+              </ArtisanLayout>
+            } />
+            <Route path="/marketing" element={
+              <ArtisanLayout>
+                <MarketingAssistant />
+              </ArtisanLayout>
+            } />
+            <Route path="/insights" element={
+              <ArtisanLayout>
+                <AudienceInsights />
+              </ArtisanLayout>
+            } />
+            <Route path="/profile" element={
+              <ArtisanLayout>
+                <Profile />
+              </ArtisanLayout>
+            } />
 
-          {/* Catch-all route for 404 */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+            {/* Catch-all route for 404 */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 
