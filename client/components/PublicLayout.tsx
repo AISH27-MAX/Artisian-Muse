@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Palette, ShoppingBag, Home, User, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface PublicLayoutProps {
   children: ReactNode;
