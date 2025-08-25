@@ -34,10 +34,10 @@ export default function MarketingAssistant() {
         </CardHeader>
         <CardContent className="space-y-6 max-w-2xl mx-auto">
           <p className="text-lg text-muted-foreground">
-            We're crafting powerful marketing tools to help you connect with your
-            audience and grow your artisan business.
+            We're crafting powerful marketing tools to help you connect with
+            your audience and grow your artisan business.
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             <div className="flex flex-col items-center gap-2 p-4">
               <Instagram className="h-8 w-8 text-accent" />
@@ -55,10 +55,13 @@ export default function MarketingAssistant() {
 
           <div className="pt-4">
             <p className="text-sm text-muted-foreground mb-4">
-              Want to see this feature built out? Let us know what marketing tools
-              would be most helpful for your artisan business.
+              Want to see this feature built out? Let us know what marketing
+              tools would be most helpful for your artisan business.
             </p>
-            <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+            <Button
+              variant="outline"
+              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+            >
               Request This Feature
             </Button>
           </div>

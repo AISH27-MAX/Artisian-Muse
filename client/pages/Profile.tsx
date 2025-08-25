@@ -34,30 +34,37 @@ export default function Profile() {
         </CardHeader>
         <CardContent className="space-y-6 max-w-2xl mx-auto">
           <p className="text-lg text-muted-foreground">
-            We're creating a beautiful profile system where you can showcase your
-            artisan journey, portfolio, and connect with art lovers worldwide.
+            We're creating a beautiful profile system where you can showcase
+            your artisan journey, portfolio, and connect with art lovers
+            worldwide.
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             <div className="flex flex-col items-center gap-3 p-4">
               <Camera className="h-8 w-8 text-secondary-foreground" />
               <div className="text-center">
                 <div className="text-sm font-medium">Portfolio Gallery</div>
-                <div className="text-xs text-muted-foreground">Showcase your best work</div>
+                <div className="text-xs text-muted-foreground">
+                  Showcase your best work
+                </div>
               </div>
             </div>
             <div className="flex flex-col items-center gap-3 p-4">
               <BookOpen className="h-8 w-8 text-secondary-foreground" />
               <div className="text-center">
                 <div className="text-sm font-medium">Artisan Bio</div>
-                <div className="text-xs text-muted-foreground">Tell your story</div>
+                <div className="text-xs text-muted-foreground">
+                  Tell your story
+                </div>
               </div>
             </div>
             <div className="flex flex-col items-center gap-3 p-4">
               <Award className="h-8 w-8 text-secondary-foreground" />
               <div className="text-center">
                 <div className="text-sm font-medium">Achievements</div>
-                <div className="text-xs text-muted-foreground">Display your credentials</div>
+                <div className="text-xs text-muted-foreground">
+                  Display your credentials
+                </div>
               </div>
             </div>
           </div>
@@ -68,23 +75,31 @@ export default function Profile() {
                 <Heart className="h-4 w-4 text-earth-500" />
                 <span className="text-sm font-medium">Craft Specialties</span>
               </div>
-              <p className="text-xs text-muted-foreground">List your skills and specializations</p>
+              <p className="text-xs text-muted-foreground">
+                List your skills and specializations
+              </p>
             </Card>
             <Card className="p-4 bg-muted/50">
               <div className="flex items-center gap-2 mb-2">
                 <User className="h-4 w-4 text-earth-500" />
                 <span className="text-sm font-medium">Contact Info</span>
               </div>
-              <p className="text-xs text-muted-foreground">Let customers find and reach you</p>
+              <p className="text-xs text-muted-foreground">
+                Let customers find and reach you
+              </p>
             </Card>
           </div>
 
           <div className="pt-4">
             <p className="text-sm text-muted-foreground mb-4">
-              Ready to build your artisan profile? Let us know what features would
-              best represent your craft and connect you with your audience.
+              Ready to build your artisan profile? Let us know what features
+              would best represent your craft and connect you with your
+              audience.
             </p>
-            <Button variant="outline" className="border-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground">
+            <Button
+              variant="outline"
+              className="border-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground"
+            >
               Help Build This Feature
             </Button>
           </div>

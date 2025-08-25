@@ -57,7 +57,8 @@ In 2019, I established my studio in Portland, where I now create custom pieces a
     "Sustainability Award - Oregon Craft Council (2021)",
     "Rising Artist Grant - Regional Arts Council (2020)",
   ],
-  philosophy: "Every thread tells a story, every weave builds a bridge between past and future.",
+  philosophy:
+    "Every thread tells a story, every weave builds a bridge between past and future.",
   studioInfo: {
     name: "Chen Weaving Studio",
     address: "1234 Artisan Way, Portland, OR 97210",
@@ -136,7 +137,14 @@ const mockProducts = [
   },
 ];
 
-const categories = ["All", "Scarves", "Accessories", "Home Decor", "Blankets", "Baby"];
+const categories = [
+  "All",
+  "Scarves",
+  "Accessories",
+  "Home Decor",
+  "Blankets",
+  "Baby",
+];
 const sortOptions = [
   { value: "featured", label: "Featured" },
   { value: "price-low", label: "Price: Low to High" },
@@ -157,7 +165,9 @@ export default function ArtisanProfile() {
   if (!artisan) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
-        <h1 className="text-2xl font-bold text-foreground mb-4">Artisan Not Found</h1>
+        <h1 className="text-2xl font-bold text-foreground mb-4">
+          Artisan Not Found
+        </h1>
         <Button asChild>
           <Link to="/marketplace">Back to Marketplace</Link>
         </Button>
@@ -166,8 +176,9 @@ export default function ArtisanProfile() {
   }
 
   // Filter and sort products
-  const filteredProducts = mockProducts.filter(product => 
-    selectedCategory === "All" || product.category === selectedCategory
+  const filteredProducts = mockProducts.filter(
+    (product) =>
+      selectedCategory === "All" || product.category === selectedCategory,
   );
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
@@ -246,17 +257,23 @@ export default function ArtisanProfile() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div className="flex items-center gap-8">
               <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">{artisan.totalProducts}</div>
+                <div className="text-2xl font-bold text-foreground">
+                  {artisan.totalProducts}
+                </div>
                 <div className="text-sm text-muted-foreground">Products</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">{artisan.totalSales}</div>
+                <div className="text-2xl font-bold text-foreground">
+                  {artisan.totalSales}
+                </div>
                 <div className="text-sm text-muted-foreground">Sales</div>
               </div>
               <div className="text-center">
                 <div className="flex items-center gap-1 justify-center">
                   <Star className="h-4 w-4 fill-accent text-accent" />
-                  <span className="text-2xl font-bold text-foreground">{artisan.rating}</span>
+                  <span className="text-2xl font-bold text-foreground">
+                    {artisan.rating}
+                  </span>
                 </div>
                 <div className="text-sm text-muted-foreground">
                   ({artisan.totalReviews} reviews)
@@ -290,7 +307,9 @@ export default function ArtisanProfile() {
         <Tabs defaultValue="about" className="space-y-8">
           <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="about">About</TabsTrigger>
-            <TabsTrigger value="products">Products ({artisan.totalProducts})</TabsTrigger>
+            <TabsTrigger value="products">
+              Products ({artisan.totalProducts})
+            </TabsTrigger>
             <TabsTrigger value="story">Story</TabsTrigger>
             <TabsTrigger value="studio">Studio</TabsTrigger>
           </TabsList>
@@ -350,7 +369,10 @@ export default function ArtisanProfile() {
                   <CardContent>
                     <ul className="space-y-2">
                       {artisan.achievements.map((achievement, index) => (
-                        <li key={index} className="text-sm text-muted-foreground">
+                        <li
+                          key={index}
+                          className="text-sm text-muted-foreground"
+                        >
                           • {achievement}
                         </li>
                       ))}
@@ -369,7 +391,9 @@ export default function ArtisanProfile() {
                 {categories.map((category) => (
                   <Button
                     key={category}
-                    variant={selectedCategory === category ? "default" : "outline"}
+                    variant={
+                      selectedCategory === category ? "default" : "outline"
+                    }
                     size="sm"
                     onClick={() => setSelectedCategory(category)}
                   >
@@ -435,9 +459,14 @@ export default function ArtisanProfile() {
                       <CardContent className="p-4">
                         <div className="space-y-2">
                           <div className="flex items-center gap-1">
-                            {Array.from({ length: product.rating }).map((_, i) => (
-                              <Star key={i} className="h-3 w-3 fill-accent text-accent" />
-                            ))}
+                            {Array.from({ length: product.rating }).map(
+                              (_, i) => (
+                                <Star
+                                  key={i}
+                                  className="h-3 w-3 fill-accent text-accent"
+                                />
+                              ),
+                            )}
                             <span className="text-xs text-muted-foreground ml-1">
                               ({product.reviews})
                             </span>
@@ -447,14 +476,19 @@ export default function ArtisanProfile() {
                           </h3>
                           <div className="flex justify-between items-center">
                             <div className="flex items-center gap-2">
-                              <span className="font-bold text-primary">${product.price}</span>
+                              <span className="font-bold text-primary">
+                                ${product.price}
+                              </span>
                               {product.originalPrice && (
                                 <span className="text-sm text-muted-foreground line-through">
                                   ${product.originalPrice}
                                 </span>
                               )}
                             </div>
-                            <Button size="sm" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                            <Button
+                              size="sm"
+                              className="opacity-0 group-hover:opacity-100 transition-opacity"
+                            >
                               <ShoppingBag className="h-3 w-3" />
                             </Button>
                           </div>
@@ -467,9 +501,15 @@ export default function ArtisanProfile() {
             ) : (
               <div className="space-y-4">
                 {sortedProducts.map((product) => (
-                  <Card key={product.id} className="hover:shadow-lg transition-shadow">
+                  <Card
+                    key={product.id}
+                    className="hover:shadow-lg transition-shadow"
+                  >
                     <CardContent className="p-4">
-                      <Link to={`/product/${product.id}`} className="flex gap-4">
+                      <Link
+                        to={`/product/${product.id}`}
+                        className="flex gap-4"
+                      >
                         <div className="w-24 h-24 shrink-0 overflow-hidden rounded-lg bg-muted">
                           <img
                             src={product.image}
@@ -483,20 +523,29 @@ export default function ArtisanProfile() {
                               {product.name}
                             </h3>
                             {product.featured && (
-                              <Badge variant="secondary" className="text-xs">Featured</Badge>
+                              <Badge variant="secondary" className="text-xs">
+                                Featured
+                              </Badge>
                             )}
                           </div>
                           <div className="flex items-center gap-1">
-                            {Array.from({ length: product.rating }).map((_, i) => (
-                              <Star key={i} className="h-3 w-3 fill-accent text-accent" />
-                            ))}
+                            {Array.from({ length: product.rating }).map(
+                              (_, i) => (
+                                <Star
+                                  key={i}
+                                  className="h-3 w-3 fill-accent text-accent"
+                                />
+                              ),
+                            )}
                             <span className="text-xs text-muted-foreground ml-1">
                               ({product.reviews} reviews)
                             </span>
                           </div>
                           <div className="flex justify-between items-center">
                             <div className="flex items-center gap-2">
-                              <span className="text-lg font-bold text-primary">${product.price}</span>
+                              <span className="text-lg font-bold text-primary">
+                                ${product.price}
+                              </span>
                               {product.originalPrice && (
                                 <span className="text-sm text-muted-foreground line-through">
                                   ${product.originalPrice}
@@ -542,21 +591,31 @@ export default function ArtisanProfile() {
                   <div>
                     <h4 className="font-semibold mb-3">Visit My Studio</h4>
                     <div className="space-y-2 text-sm">
-                      <p><strong>Studio Name:</strong> {artisan.studioInfo.name}</p>
-                      <p><strong>Address:</strong> {artisan.studioInfo.address}</p>
-                      <p><strong>Hours:</strong> {artisan.studioInfo.hours}</p>
-                      <p><strong>Visitors:</strong> {artisan.studioInfo.visitorsWelcome ? "Welcome by appointment" : "Not available"}</p>
+                      <p>
+                        <strong>Studio Name:</strong> {artisan.studioInfo.name}
+                      </p>
+                      <p>
+                        <strong>Address:</strong> {artisan.studioInfo.address}
+                      </p>
+                      <p>
+                        <strong>Hours:</strong> {artisan.studioInfo.hours}
+                      </p>
+                      <p>
+                        <strong>Visitors:</strong>{" "}
+                        {artisan.studioInfo.visitorsWelcome
+                          ? "Welcome by appointment"
+                          : "Not available"}
+                      </p>
                     </div>
                   </div>
                   <div>
                     <h4 className="font-semibold mb-3">Workshop & Classes</h4>
                     <p className="text-sm text-muted-foreground mb-4">
-                      I offer hands-on weaving workshops for all skill levels. Learn traditional techniques
-                      in a supportive, creative environment.
+                      I offer hands-on weaving workshops for all skill levels.
+                      Learn traditional techniques in a supportive, creative
+                      environment.
                     </p>
-                    <Button>
-                      Inquire About Workshops
-                    </Button>
+                    <Button>Inquire About Workshops</Button>
                   </div>
                 </div>
               </CardContent>

@@ -95,9 +95,8 @@ export default function Homepage() {
                   Handcrafted with Love
                 </div>
                 <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
-                  Discover{" "}
-                  <span className="text-primary">Unique Crafts</span> from
-                  Talented Artisans
+                  Discover <span className="text-primary">Unique Crafts</span>{" "}
+                  from Talented Artisans
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   Connect with passionate artisans and discover one-of-a-kind,
@@ -138,11 +137,15 @@ export default function Homepage() {
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary">2,000+</div>
-                  <div className="text-sm text-muted-foreground">Unique Items</div>
+                  <div className="text-sm text-muted-foreground">
+                    Unique Items
+                  </div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary">10,000+</div>
-                  <div className="text-sm text-muted-foreground">Happy Customers</div>
+                  <div className="text-sm text-muted-foreground">
+                    Happy Customers
+                  </div>
                 </div>
               </div>
             </div>
@@ -166,7 +169,9 @@ export default function Homepage() {
                     </div>
                     <div>
                       <div className="font-semibold">Handcrafted</div>
-                      <div className="text-sm text-muted-foreground">with Love</div>
+                      <div className="text-sm text-muted-foreground">
+                        with Love
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -179,7 +184,9 @@ export default function Homepage() {
                     </div>
                     <div>
                       <div className="font-semibold">Authentic</div>
-                      <div className="text-sm text-muted-foreground">& Unique</div>
+                      <div className="text-sm text-muted-foreground">
+                        & Unique
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -197,8 +204,8 @@ export default function Homepage() {
               Why Choose Artisan Muse?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Experience the joy of owning something truly special while supporting
-              passionate creators
+              Experience the joy of owning something truly special while
+              supporting passionate creators
             </p>
           </div>
 
@@ -269,12 +276,17 @@ export default function Homepage() {
                     <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                       {product.name}
                     </h3>
-                    <p className="text-muted-foreground">by {product.artisan}</p>
+                    <p className="text-muted-foreground">
+                      by {product.artisan}
+                    </p>
                     <div className="flex justify-between items-center pt-2">
                       <span className="text-2xl font-bold text-primary">
                         {product.price}
                       </span>
-                      <Button size="sm" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Button
+                        size="sm"
+                        className="opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
                         <ShoppingBag className="h-4 w-4 mr-2" />
                         View
                       </Button>
@@ -316,7 +328,9 @@ export default function Homepage() {
                   <h3 className="text-xl font-semibold text-foreground mb-2">
                     {artisan.name}
                   </h3>
-                  <p className="text-primary font-medium mb-1">{artisan.craft}</p>
+                  <p className="text-primary font-medium mb-1">
+                    {artisan.craft}
+                  </p>
                   <p className="text-sm text-muted-foreground mb-4">
                     {artisan.location}
                   </p>

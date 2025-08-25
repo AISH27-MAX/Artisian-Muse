@@ -71,7 +71,7 @@ const mockProductData = {
     "Unique Pattern (No Two Alike)",
     "Sustainable & Ethically Sourced",
   ],
-  dimensions: "70\" x 12\" (178cm x 30cm)",
+  dimensions: '70" x 12" (178cm x 30cm)',
   weight: "8 oz (227g)",
   shippingInfo: {
     freeShipping: true,
@@ -119,7 +119,9 @@ export default function ProductDetail() {
   if (!product) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
-        <h1 className="text-2xl font-bold text-foreground mb-4">Product Not Found</h1>
+        <h1 className="text-2xl font-bold text-foreground mb-4">
+          Product Not Found
+        </h1>
         <Button asChild>
           <Link to="/marketplace">Back to Marketplace</Link>
         </Button>
@@ -135,7 +137,10 @@ export default function ProductDetail() {
           Home
         </Link>
         <span>/</span>
-        <Link to="/marketplace" className="hover:text-foreground transition-colors">
+        <Link
+          to="/marketplace"
+          className="hover:text-foreground transition-colors"
+        >
           Marketplace
         </Link>
         <span>/</span>
@@ -143,11 +148,7 @@ export default function ProductDetail() {
       </div>
 
       {/* Back Button */}
-      <Button 
-        asChild 
-        variant="ghost" 
-        className="mb-6 -ml-4"
-      >
+      <Button asChild variant="ghost" className="mb-6 -ml-4">
         <Link to="/marketplace" className="flex items-center gap-2">
           <ArrowLeft className="h-4 w-4" />
           Back to Marketplace
@@ -165,7 +166,7 @@ export default function ProductDetail() {
               className="w-full h-full object-cover"
             />
           </div>
-          
+
           {/* Thumbnail Images */}
           <div className="grid grid-cols-4 gap-4">
             {product.images.map((image, index) => (
@@ -194,8 +195,10 @@ export default function ProductDetail() {
           <div className="space-y-4">
             <div className="flex items-start justify-between">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold text-foreground">{product.name}</h1>
-                <Link 
+                <h1 className="text-3xl font-bold text-foreground">
+                  {product.name}
+                </h1>
+                <Link
                   to={`/artisan/${product.artisanId}`}
                   className="text-lg text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -209,8 +212,8 @@ export default function ProductDetail() {
                   onClick={() => setIsWishlisted(!isWishlisted)}
                   className="p-2"
                 >
-                  <Heart 
-                    className={`h-5 w-5 ${isWishlisted ? "fill-red-500 text-red-500" : ""}`} 
+                  <Heart
+                    className={`h-5 w-5 ${isWishlisted ? "fill-red-500 text-red-500" : ""}`}
                   />
                 </Button>
                 <Button variant="ghost" size="sm" className="p-2">
@@ -246,7 +249,9 @@ export default function ProductDetail() {
           {/* Price */}
           <div className="space-y-2">
             <div className="flex items-center gap-3">
-              <span className="text-3xl font-bold text-primary">${product.price}</span>
+              <span className="text-3xl font-bold text-primary">
+                ${product.price}
+              </span>
               {product.originalPrice && (
                 <span className="text-xl text-muted-foreground line-through">
                   ${product.originalPrice}
@@ -255,8 +260,13 @@ export default function ProductDetail() {
             </div>
             {product.originalPrice && (
               <p className="text-sm text-green-600">
-                Save ${product.originalPrice - product.price} 
-                ({Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% off)
+                Save ${product.originalPrice - product.price}(
+                {Math.round(
+                  ((product.originalPrice - product.price) /
+                    product.originalPrice) *
+                    100,
+                )}
+                % off)
               </p>
             )}
           </div>
@@ -312,7 +322,9 @@ export default function ProductDetail() {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => setQuantity(Math.min(product.stockCount, quantity + 1))}
+                  onClick={() =>
+                    setQuantity(Math.min(product.stockCount, quantity + 1))
+                  }
                   disabled={quantity >= product.stockCount}
                 >
                   +
@@ -321,17 +333,13 @@ export default function ProductDetail() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button 
-                size="lg" 
-                className="flex-1"
-                disabled={!product.inStock}
-              >
+              <Button size="lg" className="flex-1" disabled={!product.inStock}>
                 <ShoppingBag className="h-5 w-5 mr-2" />
                 Add to Cart
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="flex-1"
                 disabled={!product.inStock}
               >
@@ -347,7 +355,9 @@ export default function ProductDetail() {
               <Truck className="h-5 w-5 text-muted-foreground" />
               <div>
                 <p className="text-sm font-medium">
-                  {product.shippingInfo.freeShipping ? "Free Shipping" : "Shipping Available"}
+                  {product.shippingInfo.freeShipping
+                    ? "Free Shipping"
+                    : "Shipping Available"}
                 </p>
                 <p className="text-xs text-muted-foreground">
                   Estimated delivery: {product.shippingInfo.estimatedDays}
@@ -383,18 +393,18 @@ export default function ProductDetail() {
           <TabsTrigger value="specifications">Specifications</TabsTrigger>
           <TabsTrigger value="reviews">Reviews ({product.reviews})</TabsTrigger>
         </TabsList>
-        
+
         <TabsContent value="description" className="mt-6">
           <Card>
             <CardContent className="p-8">
-              <div 
+              <div
                 className="prose prose-sm max-w-none"
                 dangerouslySetInnerHTML={{ __html: product.description }}
               />
             </CardContent>
           </Card>
         </TabsContent>
-        
+
         <TabsContent value="specifications" className="mt-6">
           <Card>
             <CardContent className="p-8">
@@ -437,7 +447,7 @@ export default function ProductDetail() {
             </CardContent>
           </Card>
         </TabsContent>
-        
+
         <TabsContent value="reviews" className="mt-6">
           <Card>
             <CardContent className="p-8">
@@ -468,8 +478,12 @@ export default function ProductDetail() {
                 />
               </div>
               <div>
-                <h3 className="text-lg font-semibold">{product.artisanInfo.name}</h3>
-                <p className="text-muted-foreground">{product.artisanInfo.location}</p>
+                <h3 className="text-lg font-semibold">
+                  {product.artisanInfo.name}
+                </h3>
+                <p className="text-muted-foreground">
+                  {product.artisanInfo.location}
+                </p>
                 <div className="flex items-center gap-1 mt-1">
                   <Star className="h-4 w-4 fill-accent text-accent" />
                   <span className="text-sm">{product.artisanInfo.rating}</span>
@@ -480,7 +494,9 @@ export default function ProductDetail() {
               </div>
             </div>
             <div className="flex-1">
-              <p className="text-muted-foreground mb-4">{product.artisanInfo.bio}</p>
+              <p className="text-muted-foreground mb-4">
+                {product.artisanInfo.bio}
+              </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {product.artisanInfo.specialties.map((specialty) => (
                   <Badge key={specialty} variant="outline" className="text-xs">
@@ -501,15 +517,20 @@ export default function ProductDetail() {
       {/* Related Products */}
       <section>
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl font-bold text-foreground">More from this Artisan</h2>
+          <h2 className="text-2xl font-bold text-foreground">
+            More from this Artisan
+          </h2>
           <Button asChild variant="outline">
             <Link to={`/artisan/${product.artisanId}`}>View All</Link>
           </Button>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {relatedProducts.map((relatedProduct) => (
-            <Card key={relatedProduct.id} className="group cursor-pointer hover:shadow-lg transition-shadow">
+            <Card
+              key={relatedProduct.id}
+              className="group cursor-pointer hover:shadow-lg transition-shadow"
+            >
               <Link to={`/product/${relatedProduct.id}`}>
                 <div className="aspect-square overflow-hidden rounded-t-lg bg-muted">
                   <img
@@ -522,9 +543,13 @@ export default function ProductDetail() {
                   <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
                     {relatedProduct.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground">{relatedProduct.artisan}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {relatedProduct.artisan}
+                  </p>
                   <div className="flex items-center justify-between mt-2">
-                    <span className="font-bold text-primary">${relatedProduct.price}</span>
+                    <span className="font-bold text-primary">
+                      ${relatedProduct.price}
+                    </span>
                     <div className="flex items-center gap-1">
                       <Star className="h-3 w-3 fill-accent text-accent" />
                       <span className="text-xs">{relatedProduct.rating}</span>

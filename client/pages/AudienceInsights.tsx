@@ -34,10 +34,11 @@ export default function AudienceInsights() {
         </CardHeader>
         <CardContent className="space-y-6 max-w-2xl mx-auto">
           <p className="text-lg text-muted-foreground">
-            We're developing powerful analytics to help you understand market trends,
-            customer preferences, and optimize your artisan business strategy.
+            We're developing powerful analytics to help you understand market
+            trends, customer preferences, and optimize your artisan business
+            strategy.
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-8">
             <div className="flex flex-col items-center gap-2 p-4">
               <Target className="h-8 w-8 text-primary" />
@@ -62,7 +63,10 @@ export default function AudienceInsights() {
               Want detailed market insights for artisan businesses? Tell us what
               data would be most valuable for growing your craft.
             </p>
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            <Button
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            >
               Request Analytics Features
             </Button>
           </div>

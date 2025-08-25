@@ -113,7 +113,14 @@ const mockProducts = [
   },
 ];
 
-const categories = ["All", "Textiles", "Ceramics", "Leather", "Woodwork", "Jewelry"];
+const categories = [
+  "All",
+  "Textiles",
+  "Ceramics",
+  "Leather",
+  "Woodwork",
+  "Jewelry",
+];
 const priceRanges = [
   { label: "Under $50", min: 0, max: 50 },
   { label: "$50 - $100", min: 50, max: 100 },
@@ -139,19 +146,26 @@ export default function Marketplace() {
   // Filter products
   const filteredProducts = mockProducts.filter((product) => {
     // Search filter
-    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    const matchesSearch =
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       product.artisan.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+      product.tags.some((tag) =>
+        tag.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
 
     // Category filter
-    const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
+    const matchesCategory =
+      selectedCategory === "All" || product.category === selectedCategory;
 
     // Price range filter
-    const matchesPriceRange = selectedPriceRanges.length === 0 || 
-      selectedPriceRanges.some(range => {
-        const priceRange = priceRanges.find(r => r.label === range);
+    const matchesPriceRange =
+      selectedPriceRanges.length === 0 ||
+      selectedPriceRanges.some((range) => {
+        const priceRange = priceRanges.find((r) => r.label === range);
         if (!priceRange) return false;
-        return product.price >= priceRange.min && product.price <= priceRange.max;
+        return (
+          product.price >= priceRange.min && product.price <= priceRange.max
+        );
       });
 
     return matchesSearch && matchesCategory && matchesPriceRange;
@@ -177,7 +191,7 @@ export default function Marketplace() {
     if (checked) {
       setSelectedPriceRanges([...selectedPriceRanges, range]);
     } else {
-      setSelectedPriceRanges(selectedPriceRanges.filter(r => r !== range));
+      setSelectedPriceRanges(selectedPriceRanges.filter((r) => r !== range));
     }
   };
 
@@ -187,7 +201,10 @@ export default function Marketplace() {
         <h3 className="font-semibold text-foreground mb-3">Categories</h3>
         <div className="space-y-2">
           {categories.map((category) => (
-            <label key={category} className="flex items-center space-x-2 cursor-pointer">
+            <label
+              key={category}
+              className="flex items-center space-x-2 cursor-pointer"
+            >
               <input
                 type="radio"
                 name="category"
@@ -209,7 +226,7 @@ export default function Marketplace() {
               <Checkbox
                 id={range.label}
                 checked={selectedPriceRanges.includes(range.label)}
-                onCheckedChange={(checked) => 
+                onCheckedChange={(checked) =>
                   handlePriceRangeChange(range.label, checked as boolean)
                 }
               />
@@ -231,7 +248,8 @@ export default function Marketplace() {
           Marketplace
         </h1>
         <p className="text-xl text-muted-foreground">
-          Discover unique, handcrafted treasures from talented artisans worldwide
+          Discover unique, handcrafted treasures from talented artisans
+          worldwide
         </p>
       </div>
 
@@ -349,12 +367,14 @@ export default function Marketplace() {
                     <CardContent className="p-6">
                       <div className="space-y-3">
                         <div className="flex items-center gap-1">
-                          {Array.from({ length: product.rating }).map((_, i) => (
-                            <Star
-                              key={i}
-                              className="h-4 w-4 fill-accent text-accent"
-                            />
-                          ))}
+                          {Array.from({ length: product.rating }).map(
+                            (_, i) => (
+                              <Star
+                                key={i}
+                                className="h-4 w-4 fill-accent text-accent"
+                              />
+                            ),
+                          )}
                           <span className="text-sm text-muted-foreground ml-2">
                             ({product.reviews})
                           </span>
@@ -362,7 +382,7 @@ export default function Marketplace() {
                         <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
                           {product.name}
                         </h3>
-                        <Link 
+                        <Link
                           to={`/artisan/${product.artisanId}`}
                           className="text-sm text-muted-foreground hover:text-primary transition-colors"
                           onClick={(e) => e.stopPropagation()}
@@ -373,8 +393,8 @@ export default function Marketplace() {
                           <span className="text-xl font-bold text-primary">
                             ${product.price}
                           </span>
-                          <Button 
-                            size="sm" 
+                          <Button
+                            size="sm"
                             className="opacity-0 group-hover:opacity-100 transition-opacity"
                             onClick={(e) => {
                               e.preventDefault();
@@ -394,7 +414,10 @@ export default function Marketplace() {
           ) : (
             <div className="space-y-4">
               {sortedProducts.map((product) => (
-                <Card key={product.id} className="hover:shadow-lg transition-shadow">
+                <Card
+                  key={product.id}
+                  className="hover:shadow-lg transition-shadow"
+                >
                   <CardContent className="p-6">
                     <Link to={`/product/${product.id}`} className="flex gap-6">
                       <div className="w-32 h-32 shrink-0 overflow-hidden rounded-lg bg-muted">
@@ -409,7 +432,7 @@ export default function Marketplace() {
                           <h3 className="text-xl font-semibold text-foreground hover:text-primary transition-colors">
                             {product.name}
                           </h3>
-                          <Link 
+                          <Link
                             to={`/artisan/${product.artisanId}`}
                             className="text-muted-foreground hover:text-primary transition-colors"
                             onClick={(e) => e.stopPropagation()}
@@ -418,22 +441,26 @@ export default function Marketplace() {
                           </Link>
                         </div>
                         <div className="flex items-center gap-1">
-                          {Array.from({ length: product.rating }).map((_, i) => (
-                            <Star
-                              key={i}
-                              className="h-4 w-4 fill-accent text-accent"
-                            />
-                          ))}
+                          {Array.from({ length: product.rating }).map(
+                            (_, i) => (
+                              <Star
+                                key={i}
+                                className="h-4 w-4 fill-accent text-accent"
+                              />
+                            ),
+                          )}
                           <span className="text-sm text-muted-foreground ml-2">
                             ({product.reviews} reviews)
                           </span>
                         </div>
-                        <p className="text-muted-foreground">{product.description}</p>
+                        <p className="text-muted-foreground">
+                          {product.description}
+                        </p>
                         <div className="flex justify-between items-center">
                           <span className="text-2xl font-bold text-primary">
                             ${product.price}
                           </span>
-                          <Button 
+                          <Button
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
@@ -461,7 +488,8 @@ export default function Marketplace() {
                 No products found
               </h3>
               <p className="text-muted-foreground">
-                Try adjusting your search or filters to find what you're looking for.
+                Try adjusting your search or filters to find what you're looking
+                for.
               </p>
             </div>
           )}

@@ -30,7 +30,10 @@ export function PublicLayout({ children }: PublicLayoutProps) {
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <Link
+            to="/"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+          >
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
               <Palette className="h-6 w-6 text-primary-foreground" />
             </div>
@@ -68,7 +71,12 @@ export function PublicLayout({ children }: PublicLayoutProps) {
           {/* Action Buttons */}
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <Button asChild variant="ghost" size="sm" className="hidden sm:flex">
+            <Button
+              asChild
+              variant="ghost"
+              size="sm"
+              className="hidden sm:flex"
+            >
               <Link to="/dashboard" className="flex items-center gap-2">
                 <User className="h-4 w-4" />
                 Artisan Portal
@@ -108,9 +116,7 @@ export function PublicLayout({ children }: PublicLayoutProps) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1">
-        {children}
-      </main>
+      <main className="flex-1">{children}</main>
 
       {/* Footer */}
       <footer className="border-t border-border/40 bg-muted/30">
@@ -136,13 +142,22 @@ export function PublicLayout({ children }: PublicLayoutProps) {
             <div className="space-y-4">
               <h3 className="text-sm font-semibold text-foreground">Explore</h3>
               <div className="flex flex-col space-y-2">
-                <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  to="/"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Home
                 </Link>
-                <Link to="/marketplace" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  to="/marketplace"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Marketplace
                 </Link>
-                <Link to="/artisans" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  to="/artisans"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Featured Artisans
                 </Link>
               </div>
@@ -150,15 +165,26 @@ export function PublicLayout({ children }: PublicLayoutProps) {
 
             {/* For Artisans */}
             <div className="space-y-4">
-              <h3 className="text-sm font-semibold text-foreground">For Artisans</h3>
+              <h3 className="text-sm font-semibold text-foreground">
+                For Artisans
+              </h3>
               <div className="flex flex-col space-y-2">
-                <Link to="/dashboard" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  to="/dashboard"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Join as Artisan
                 </Link>
-                <Link to="/storyteller" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  to="/storyteller"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Share Your Story
                 </Link>
-                <Link to="/marketing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  to="/marketing"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Marketing Tools
                 </Link>
               </div>
@@ -168,13 +194,22 @@ export function PublicLayout({ children }: PublicLayoutProps) {
             <div className="space-y-4">
               <h3 className="text-sm font-semibold text-foreground">Support</h3>
               <div className="flex flex-col space-y-2">
-                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a
+                  href="#"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Help Center
                 </a>
-                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a
+                  href="#"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Contact Us
                 </a>
-                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a
+                  href="#"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Privacy Policy
                 </a>
               </div>

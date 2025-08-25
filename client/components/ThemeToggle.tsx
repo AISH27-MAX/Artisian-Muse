@@ -14,10 +14,10 @@ interface ThemeToggleProps {
   showLabel?: boolean;
 }
 
-export function ThemeToggle({ 
-  variant = "ghost", 
+export function ThemeToggle({
+  variant = "ghost",
   size = "icon",
-  showLabel = false 
+  showLabel = false,
 }: ThemeToggleProps) {
   const { theme, toggleTheme } = useTheme();
 
@@ -46,7 +46,9 @@ export function ThemeToggle({
           </Button>
         </TooltipTrigger>
         <TooltipContent>
-          <p>{theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}</p>
+          <p>
+            {theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          </p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

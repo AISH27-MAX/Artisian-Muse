@@ -41,53 +41,80 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             {/* Public Routes */}
-            <Route path="/" element={
-              <PublicLayout>
-                <Homepage />
-              </PublicLayout>
-            } />
-            <Route path="/marketplace" element={
-              <PublicLayout>
-                <Marketplace />
-              </PublicLayout>
-            } />
-            <Route path="/product/:id" element={
-              <PublicLayout>
-                <ProductDetail />
-              </PublicLayout>
-            } />
-            <Route path="/artisan/:id" element={
-              <PublicLayout>
-                <ArtisanProfile />
-              </PublicLayout>
-            } />
+            <Route
+              path="/"
+              element={
+                <PublicLayout>
+                  <Homepage />
+                </PublicLayout>
+              }
+            />
+            <Route
+              path="/marketplace"
+              element={
+                <PublicLayout>
+                  <Marketplace />
+                </PublicLayout>
+              }
+            />
+            <Route
+              path="/product/:id"
+              element={
+                <PublicLayout>
+                  <ProductDetail />
+                </PublicLayout>
+              }
+            />
+            <Route
+              path="/artisan/:id"
+              element={
+                <PublicLayout>
+                  <ArtisanProfile />
+                </PublicLayout>
+              }
+            />
 
             {/* Artisan Dashboard Routes */}
-            <Route path="/dashboard" element={
-              <ArtisanLayout>
-                <Dashboard />
-              </ArtisanLayout>
-            } />
-            <Route path="/storyteller" element={
-              <ArtisanLayout>
-                <StorytellerStudio />
-              </ArtisanLayout>
-            } />
-            <Route path="/marketing" element={
-              <ArtisanLayout>
-                <MarketingAssistant />
-              </ArtisanLayout>
-            } />
-            <Route path="/insights" element={
-              <ArtisanLayout>
-                <AudienceInsights />
-              </ArtisanLayout>
-            } />
-            <Route path="/profile" element={
-              <ArtisanLayout>
-                <Profile />
-              </ArtisanLayout>
-            } />
+            <Route
+              path="/dashboard"
+              element={
+                <ArtisanLayout>
+                  <Dashboard />
+                </ArtisanLayout>
+              }
+            />
+            <Route
+              path="/storyteller"
+              element={
+                <ArtisanLayout>
+                  <StorytellerStudio />
+                </ArtisanLayout>
+              }
+            />
+            <Route
+              path="/marketing"
+              element={
+                <ArtisanLayout>
+                  <MarketingAssistant />
+                </ArtisanLayout>
+              }
+            />
+            <Route
+              path="/insights"
+              element={
+                <ArtisanLayout>
+                  <AudienceInsights />
+                </ArtisanLayout>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <ArtisanLayout>
+                  <Profile />
+                </ArtisanLayout>
+              }
+            />
 
             {/* Catch-all route for 404 */}
             <Route path="*" element={<NotFound />} />

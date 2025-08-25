@@ -35,7 +35,7 @@ interface StoryFormData {
 
 export default function StorytellerStudio() {
   const [uploadedImages, setUploadedImages] = useState<string[]>([]);
-  
+
   const form = useForm<StoryFormData>({
     defaultValues: {
       itemName: "",
@@ -99,7 +99,8 @@ export default function StorytellerStudio() {
                   "Every craft has a story, every story has power to inspire."
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Tell your story and let your passion shine through every detail.
+                  Tell your story and let your passion shine through every
+                  detail.
                 </p>
               </div>
             </div>
@@ -162,8 +163,8 @@ export default function StorytellerStudio() {
                       />
                     </FormControl>
                     <FormDescription>
-                      Share the materials that brought your vision to life - their
-                      origins, qualities, and why you chose them
+                      Share the materials that brought your vision to life -
+                      their origins, qualities, and why you chose them
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -228,9 +229,9 @@ export default function StorytellerStudio() {
               <FormField
                 control={form.control}
                 name="timeToMake"
-                rules={{ 
+                rules={{
                   required: "Time to make is required",
-                  min: { value: 1, message: "Time must be at least 1 hour" }
+                  min: { value: 1, message: "Time must be at least 1 hour" },
                 }}
                 render={({ field }) => (
                   <FormItem>
@@ -310,8 +311,8 @@ export default function StorytellerStudio() {
 
               {/* Submit Button */}
               <div className="flex justify-end pt-6">
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   size="lg"
                   className="h-12 px-8 bg-primary hover:bg-primary/90"
                 >
