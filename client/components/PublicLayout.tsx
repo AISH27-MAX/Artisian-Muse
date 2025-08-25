@@ -67,6 +67,7 @@ export function PublicLayout({ children }: PublicLayoutProps) {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <Button asChild variant="ghost" size="sm" className="hidden sm:flex">
               <Link to="/dashboard" className="flex items-center gap-2">
                 <User className="h-4 w-4" />
