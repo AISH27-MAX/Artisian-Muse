@@ -7,15 +7,24 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// Layout
+// Layouts
+import { PublicLayout } from "@/components/PublicLayout";
 import { ArtisanLayout } from "@/components/ArtisanLayout";
 
-// Pages
+// Public Pages
+import Homepage from "./pages/Homepage";
+import Marketplace from "./pages/Marketplace";
+import ProductDetail from "./pages/ProductDetail";
+import ArtisanProfile from "./pages/ArtisanProfile";
+
+// Artisan Dashboard Pages
 import Dashboard from "./pages/Dashboard";
 import StorytellerStudio from "./pages/StorytellerStudio";
 import MarketingAssistant from "./pages/MarketingAssistant";
 import AudienceInsights from "./pages/AudienceInsights";
 import Profile from "./pages/Profile";
+
+// Other
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,7 +36,30 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* Public Routes */}
           <Route path="/" element={
+            <PublicLayout>
+              <Homepage />
+            </PublicLayout>
+          } />
+          <Route path="/marketplace" element={
+            <PublicLayout>
+              <Marketplace />
+            </PublicLayout>
+          } />
+          <Route path="/product/:id" element={
+            <PublicLayout>
+              <ProductDetail />
+            </PublicLayout>
+          } />
+          <Route path="/artisan/:id" element={
+            <PublicLayout>
+              <ArtisanProfile />
+            </PublicLayout>
+          } />
+
+          {/* Artisan Dashboard Routes */}
+          <Route path="/dashboard" element={
             <ArtisanLayout>
               <Dashboard />
             </ArtisanLayout>
@@ -52,6 +84,7 @@ const App = () => (
               <Profile />
             </ArtisanLayout>
           } />
+
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
